@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- <html lang="ja"> -->
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>Massage mina test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="OGP TEST title">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="OGP TEST description">
+    <meta property="og:url" content="https://liff.line.me/1655585447-JOpNq04A">
+    <meta property="og:site_name" content="OGP TEST site name">
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7_Q-XfTIddtuHL_aYvIeWaisMHqhchLMPJA&usqp=CAU">
+    
+    <style>font-family
+      .label {
+        font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+      }
+      
+      html {
+        font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+        line-height: 1.7;
+        letter-spacing: 1px;
+      }
+      
+       /* ここから下がボタンのCSS　*/
+      .btn {
+        display: inline-block;
+        width: 50%;
+        border: 2px solid #C23685;
+        font-size: 16px;
+        color: #C23685;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: .4s;
+        margin: 8px;
+        background-color: #FFFFFF;
+      }
+
+
+      }
+
+      .btn:hover {
+        background-color: #C23685;
+        border-color: #C23685;
+        color: #FFF;
+      }
+
+      .profile {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
+      .flex {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align:center;
+      }
+      img {
+        margin: 0px;
+        width: 100%;
+      }
+      .h1 {
+        text-align:center; 
+        width: 100%;
+      }
+      .h2 {
+        text-align:center;
+        width: 100%;
+      }
+    </style>
+    <!-- Load LIFF SDK -->
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  </head>
+  <body>
+    <img src="purple_sky.JPG"/>
+    <div class="flex">
+      <h1 >Massage mina</h1>
+      <h2 >はじめまして</h2>
+    </div>
+    <div class="flex">
+      <label>LINEアプリ内の外部遷移の例</label></br>
+      <a href="https://linecorp.com/ja/">https://linecorp.com/ja/</a><br>
+    </div>
+    <div class="flex">
+      <label>ネイティブアプリへの外部遷移の例</label></br>
+      <a href="https://apps.apple.com/jp/app/line/id443904275">https://apps.apple.com/jp/app/line/id443904275</a><br>
+    </div>
+<div class="flex">
+  <p>Social Plugin</p>
+    <div class="line-it-button" data-lang="ja" data-type="friend" data-lineid="@447qnjan" style="display: none;"></div>
+    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+  <p>OAMのWebサイトにボタンを設置する（https://lin.ee/VQApau）</p>
+    <a href="https://lin.ee/VQApau"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
+
+
+
+
+  <button class="btn" id="scanCode">QRコードボタン</button></br>
+
+</div>
+<!--     <div class="flex">
+      <label>予約したい日時を選択</label></br>
+      <input type="date" name="tomorrow" id="tomorrow"></br>
+      <input id="appt-time" type="time" name="appt-time"></br>
+      <button class="btn" id="sendMessage">送信</button></br>
+    </div>　-->
+    <div class="flex">
+      <label>追加したいメッセージを入力</label></br>
+      <input type="text" id="message" name="message" size="30" placeholder="メッセージを入力"></br>
+      <button class="btn" id="shareFriends">友だちにシェア</button></br>
+    </div>
+    <div class="flex">
+      <input type="file" name="example" accept="image/jpeg, image/png">
+    </div>
+
+  <div class="flex">
+      <button class="btn" id="closeWindowButton">close</button>
+    </div>
+    </br>
+    <input type="file" id="take-picture" accept="image/*">
+    </br>
+    <img src="about:blank" alt="" id="show-picture" class="img">
+    <div class="flex">
+      <button class="btn" id="showProfile">プロフィール情報を確認</button></br>
+      <img id="profile_img" class="img" src=""/>
+      <p id="profile_name"></p>
+    </div>
+
+<!--   
+    <h3>同じChannel内のLIFFへの遷移</h3>
+    <a href="https://liff.line.me/1653746756-x1agVRg7">同じChannel内のLIFFへの遷移</a><br>
+    <h3>同じプロバイダー内のLIFFへの遷移</h3>
+    <a href="https://liff.line.me/1654350012-x5Rj27Am">同じプロバイダー内別のChannelのLIFFへの遷移</a><br>
+    <h3>違うプロバイダーのLIFFへの遷移</h3>
+    <a href="https://liff.line.me/1654310710-98RwvjmY">違うプロバイダーのLIFFへの遷移</a><br>  -->
+  </body>
+  <script>
+    // My LIFF ID
+    const liffId = "1654803724-QeZjLYrX"
+    // Text I want to send
+    const text = "予約"
+    // Containers displaying profile information
+    const Name = document.getElementById('profile_name');
+    const Img = document.getElementById("profile_img");
+
+    // Callbacks being called after clicking the button
+    function showProfile() {
+      liff.getProfile()
+      .then(profile => {
+        const uid = profile.userId;
+        const name = profile.displayName;
+        const pic = profile.pictureUrl;
+        console.log('uid', uid);
+        console.log('name', name);
+        console.log('pic', pic);
+        Name.innerHTML = name;
+        Img.src = pic;
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
+    }
+    
+    function scanCode() {
+      console.log('scanCodeが呼ばれた！');
+      liff.scanCodeV2().then(result => {
+        console.log('liff.scanCodeV2()済み');
+    // result = { value: '' }
+  });
+}
+      
+
+    function sendMessage() {
+      const val = document.getElementById("tomorrow").value;
+      const time = document.getElementById("appt-time").value;
+      console.log('val', val);
+      console.log('time', time);
+      liff.sendMessages(
+        [{
+          type: "text",
+          text: val + " " + time
+        },{
+          type: "text",
+          text: "日時希望" 
+        }]
+        ).then(function() {
+            window.alert('情報が送られました。トーク画面に戻りましょう');
+        }).catch(function(error) {
+            window.alert('エラーが起こりました。：' + error);
+        });
+    }
+
+    function shareFriends() {
+      console.log('shareFriends Started');
+      const message = document.getElementById("message").value
+      console.log('message', message);
+      if (liff.isApiAvailable('shareTargetPicker')){
+        liff.shareTargetPicker(
+          [{
+            type: 'text',
+            text: message + 'https://liff.line.me/1653746756-2Lrl3yld'
+          }]
+        ).then(function() {
+          window.alert('シェアしました');
+        }).catch(function(error) {
+          window.alert('シェア機能でエラーが起こりました：'+ error);
+        });
+      };
+    }
+
+    function closeWindow() {
+      console.log('Closed!!');
+    }
+
+    liff.init({liffId}).then(() => {
+      if (liff.isLoggedIn()) {
+        console.log('liff.initID?', liffId);
+        const idToken = liff.getIDToken();
+        console.log('idToken', idToken);
+      }
+      else{
+        liff.login();
+      }
+    })
+    
+    
+
+    // Declaration to bind buttons and callbacks
+    document.querySelector("#scanCode").addEventListener("click", scanCode)
+    document.querySelector("#showProfile").addEventListener("click", showProfile)
+    document.querySelector("#sendMessage").addEventListener("click", sendMessage)
+    document.querySelector("#shareFriends").addEventListener("click", shareFriends)
+    document.getElementById('closeWindowButton').addEventListener('click', closeWindow)
+
+  </script>
+</html>
