@@ -79,7 +79,8 @@
       <h1 >Massage mina</h1>
       <h2 >はじめまして</h2>
       <h3 >https://hellolovesocial.github.io/test_liff_2/</h3>
-      <h3>liffId = "1656012919-X1y86Y0M"</h3>
+<!--       <h3>liffId = "1656012919-X1y86Y0M"</h3> -->
+      <h3>liffId = "1655985500-gkJA8vRv"</h3>
       <h4>TESTpublishさせないチャネル</h4>
     </div>
     <div class="flex">
@@ -142,7 +143,8 @@
   </body>
   <script>
     // My LIFF ID
-    const liffId = "1656012919-X1y86Y0M"
+//     const liffId = "1656012919-X1y86Y0M"
+    const liffId = "1655985500-gkJA8vRv"
     // Text I want to send
     const text = "予約"
     // Containers displaying profile information
@@ -204,7 +206,6 @@
         liff.shareTargetPicker(
           [{
             type: 'text',
-            text: message + 'https://liff.line.me/1653746756-2Lrl3yld'
           }]
         ).then(function() {
           window.alert('シェアしました');
@@ -221,8 +222,8 @@
     liff.init({liffId}).then(() => {
       if (liff.isLoggedIn()) {
         console.log('liff.initID?', liffId);
-        const idToken = liff.getIDToken();
-        console.log('idToken', idToken);
+        const idToken = liff.getDecodedIDToken();
+        console.log(idToken);
       }
       else{
         liff.login();
